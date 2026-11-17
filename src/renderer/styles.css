@@ -1,0 +1,68 @@
+:root {
+  color-scheme: light;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: #21332e;
+  background: #f3f5f4;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
+button:disabled { cursor: not-allowed; }
+:focus-visible { outline: 3px solid #255fc1; outline-offset: 2px; }
+
+.toolbar {
+  height: 100px;
+  padding: 14px 16px;
+  display: grid;
+  grid-template-columns: 174px 250px minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+  background: #fff;
+  border-bottom: 1px solid #dce4df;
+}
+.brand { display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 17px; letter-spacing: -.5px; }
+.brand-mark { width: 28px; height: 28px; display: grid; place-items: center; color: white; background: #1d6652; border-radius: 8px; font-size: 18px; }
+.navigation { display: flex; gap: 6px; }
+.navigation button { border: 1px solid #d6dfda; border-radius: 10px; background: #f7faf8; color: #243b32; padding: 12px 10px; min-height: 48px; white-space: nowrap; }
+.navigation button:disabled { color: #98a7a0; background: #f5f6f5; }
+.address-form { display: flex; gap: 8px; align-items: end; min-width: 0; }
+.address-form label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
+.address-form input { width: 100%; min-width: 0; height: 50px; border: 1px solid #b9cbc1; border-radius: 10px; padding: 0 15px; font-size: 18px; background: #fff; color: #21332e; }
+.address-form input::placeholder { color: #72877b; }
+.address-form button { height: 50px; padding: 0 20px; flex: none; border: 0; border-radius: 10px; background: #1d6652; color: white; font-size: 17px; font-weight: 700; }
+.address-form button:hover { background: #145440; }
+
+.workspace { height: calc(100vh - 100px); padding: 16px; display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 16px; }
+.site-panel, .assistant { min-height: 0; border: 1px solid #dce4df; border-radius: 15px; background: #fff; box-shadow: 0 4px 18px rgba(31, 62, 48, .04); }
+.site-panel { display: grid; place-items: center; overflow: hidden; }
+.site-placeholder { text-align: center; max-width: 490px; padding: 24px; }
+.placeholder-icon { width: 76px; height: 76px; margin: 0 auto 22px; display: grid; place-items: center; border-radius: 22px; color: #277358; background: #e4f3e9; font-size: 38px; }
+.site-placeholder h1 { margin: 0 0 12px; font-size: 28px; }
+.site-placeholder p { margin: 0 0 9px; color: #586d61; font-size: 18px; line-height: 1.6; }
+.site-placeholder .hint { font-size: 14px; color: #7b8c82; }
+.assistant { display: flex; flex-direction: column; padding: 22px; overflow: auto; }
+.eyebrow { color: #26765a; font-size: 13px; font-weight: 700; letter-spacing: .04em; }
+.assistant h2 { margin: 10px 0 10px; font-size: 25px; line-height: 1.25; }
+.assistant-heading p { margin: 0; color: #596e62; font-size: 16px; line-height: 1.6; }
+.status-card { margin-top: 24px; padding: 16px; border-radius: 12px; background: #f1f7f3; display: flex; flex-direction: column; gap: 8px; }
+.status-label { color: #547262; font-size: 13px; font-weight: 700; }
+.status-card strong { font-size: 17px; overflow-wrap: anywhere; }
+#status-text { color: #3b5e4b; font-size: 14px; line-height: 1.4; overflow-wrap: anywhere; }
+#status-text[data-status="error"], #status-text[data-status="notice"] { color: #9c3d2e; }
+.assistant-actions { display: grid; gap: 10px; margin-top: 24px; }
+.assistant-actions button { min-height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 14px; border: 1px solid #dbe4dd; border-radius: 11px; text-align: left; color: #597366; background: #f8faf8; font-size: 16px; font-weight: 650; }
+.assistant-actions button span { color: #8c9e92; font-size: 12px; font-weight: 500; white-space: nowrap; }
+.assistant-bottom { margin-top: auto; padding-top: 22px; }
+.assistant-bottom label { display: block; margin-bottom: 9px; font-size: 16px; font-weight: 700; }
+.assistant-bottom textarea { width: 100%; resize: none; border: 1px solid #dbe4dd; border-radius: 10px; padding: 12px; background: #f6f8f6; color: #5c7165; }
+.assistant-bottom p { color: #829288; font-size: 12px; line-height: 1.4; }
+
+@media (max-width: 1050px) {
+  .toolbar { grid-template-columns: 154px 190px minmax(0, 1fr); gap: 9px; }
+  .brand { font-size: 14px; }
+  .navigation button { padding: 10px 7px; font-size: 13px; }
+  .workspace { grid-template-columns: minmax(0, 1fr) 360px; }
+}

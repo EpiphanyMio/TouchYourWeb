@@ -1,0 +1,14 @@
+{
+  "name": "touch-your-web",
+  "version": "0.1.0",
+  "private": true,
+  "description": "帮助老年人使用不同网站的桌面网页助手原型",
+  "main": "src/main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "electron": "45.3.3"
+  }
+}

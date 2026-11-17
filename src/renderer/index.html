@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'" />
+    <title>TouchYourWeb 网页助手</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="toolbar">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">✦</span><span>TouchYourWeb</span></div>
+      <nav class="navigation" aria-label="网页导航">
+        <button id="back" type="button" disabled aria-label="返回上一页">← <span>返回</span></button>
+        <button id="forward" type="button" disabled aria-label="前进到下一页">→ <span>前进</span></button>
+        <button id="reload" type="button" disabled aria-label="刷新网页">↻ <span>刷新</span></button>
+      </nav>
+      <form id="address-form" class="address-form" aria-label="打开网站">
+        <label for="address">网站地址</label>
+        <input id="address" type="text" inputmode="url" spellcheck="false" autocomplete="url" placeholder="输入网址，例如 example.com" aria-describedby="address-help" />
+        <button id="open" type="submit">打开网页</button>
+      </form>
+    </header>
+
+    <main class="workspace">
+      <section class="site-panel" aria-labelledby="site-heading">
+        <div class="site-placeholder">
+          <div class="placeholder-icon" aria-hidden="true">◎</div>
+          <h1 id="site-heading">在这里打开网站</h1>
+          <p>在上方输入网址，网页会显示在这个区域。</p>
+          <p id="address-help" class="hint">可输入以 http:// 或 https:// 开头的网址，也可直接输入网站域名。</p>
+        </div>
+      </section>
+
+      <aside class="assistant" aria-labelledby="assistant-title">
+        <div class="assistant-heading">
+          <span class="eyebrow">网页助手 · 启动周原型</span>
+          <h2 id="assistant-title">你好，我在这里帮你</h2>
+          <p>先打开网站。之后这里会帮助你看懂页面、寻找入口、跟着步骤操作。</p>
+        </div>
+        <div class="status-card" role="status" aria-live="polite">
+          <span class="status-label">当前网页</span>
+          <strong id="page-title">尚未打开网站</strong>
+          <span id="status-text">等待输入网址</span>
+        </div>
+        <div class="assistant-actions" aria-label="后续功能预览">
+          <button type="button" disabled>看懂当前页 <span>即将开放</span></button>
+          <button type="button" disabled>找我要办的事 <span>即将开放</span></button>
+        </div>
+        <div class="assistant-bottom">
+          <label for="question">想问助手什么？</label>
+          <textarea id="question" rows="3" placeholder="页面问答将在后续周次接入" disabled></textarea>
+          <p>此处是界面空壳，尚未读取网页或调用 AI。</p>
+        </div>
+      </aside>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
